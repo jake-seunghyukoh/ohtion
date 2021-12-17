@@ -1,15 +1,15 @@
-import { ReactNode } from 'react';
-import Footer from './footer';
-import Header from './header';
+import { ReactNode } from "react";
+import Footer from "./footer";
+import Header from "./header";
 
 export function HomeLayout({ children }: { children: ReactNode }) {
-  return (
-    <div>
-      <Header />
-      <main>Home Layout{children}</main>
-      <Footer />
-    </div>
-  );
+	return (
+		<div>
+			<Header />
+			<main>Home Layout{children}</main>
+			<Footer />
+		</div>
+	);
 }
 
 export default HomeLayout;
