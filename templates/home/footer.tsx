@@ -1,5 +1,5 @@
 export function HomeFooter() {
-  return <div>HomeFooter</div>;
+  return <footer>HomeFooter</footer>;
 }
 
 export default HomeFooter;

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 export function DefaultHeader() {
-  return <div>Default Header</div>;
+  return <header>Default Header</header>;
 }
 
 export default DefaultHeader;

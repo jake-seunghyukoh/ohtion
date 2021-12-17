@@ -6,8 +6,7 @@ export function HomeLayout({ children }: { children: ReactNode }) {
   return (
     <div>
       <Header />
-      <>Home Layout</>
-      {children}
+      <main>Home Layout{children}</main>
       <Footer />
     </div>
   );

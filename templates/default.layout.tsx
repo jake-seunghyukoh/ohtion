@@ -1,12 +1,7 @@
 import { ReactNode } from 'react';
 
 export function HomeLayout({ children }: { children: ReactNode }) {
-  return (
-    <div>
-      <>Default Layout</>
-      {children}
-    </div>
-  );
+  return <main>{children}</main>;
 }
 
 export default HomeLayout;

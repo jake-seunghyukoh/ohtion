@@ -2,12 +2,12 @@ import Link from 'next/link';
 
 export function HomeHeader() {
   return (
-    <div>
+    <header>
       Home Header
       <Link href="/auth/join">
         <a>Join</a>
       </Link>
-    </div>
+    </header>
   );
 }
 
