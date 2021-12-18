@@ -1,4 +1,5 @@
 import WorkspaceLayout from "@templates/home/layout";
+import { AppContext } from "next/app";
 import Link from "next/link";
 import { ReactElement, ReactNode } from "react";
 
@@ -6,9 +7,12 @@ type Workspace = {
 	pageName: string;
 };
 
-export function Home() {
-	const workspaces: Workspace[] = [{ pageName: "seunghyuk" }];
+type HomeProps = {
+	workspaces: Workspace[];
+};
 
+export function Home(props: HomeProps) {
+	const { workspaces } = props;
 	return (
 		<div>
 			<h1>Ohtion</h1>
@@ -30,6 +34,21 @@ export function Home() {
 			</ul>
 		</div>
 	);
+}
+
+export async function getStaticProps(context: AppContext) {
+	const workspaces: Workspace[] = [
+		{ pageName: "seunghyuk" },
+		{ pageName: "weebut" },
+	];
+
+	const props: HomeProps = {
+		workspaces: workspaces,
+	};
+
+	return {
+		props: props,
+	};
 }
 
 Home.getLayout = (page: ReactElement): ReactNode => {
