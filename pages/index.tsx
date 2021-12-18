@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ReactElement, ReactNode } from "react";
 
 type Workspace = {
-	pageName: string;
+	name: string;
 };
 
 type HomeProps = {
@@ -19,14 +19,14 @@ export function Home(props: HomeProps) {
 			<ul>
 				{workspaces.map((workspace) => {
 					return (
-						<li key={workspace.pageName}>
+						<li key={workspace.name}>
 							<Link
 								href={{
-									pathname: "/workspace/[pageName]",
-									query: { pageName: workspace.pageName },
+									pathname: "/workspace/[workspaceName]",
+									query: { workspaceName: workspace.name },
 								}}
 							>
-								<a>{`Go to workspace: ${workspace.pageName}`}</a>
+								<a>{`Go to workspace: ${workspace.name}`}</a>
 							</Link>
 						</li>
 					);
@@ -37,10 +37,7 @@ export function Home(props: HomeProps) {
 }
 
 export async function getStaticProps(context: AppContext) {
-	const workspaces: Workspace[] = [
-		{ pageName: "seunghyuk" },
-		{ pageName: "weebut" },
-	];
+	const workspaces: Workspace[] = [{ name: "seunghyuk" }, { name: "weebut" }];
 
 	const props: HomeProps = {
 		workspaces: workspaces,
